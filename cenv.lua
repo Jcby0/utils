@@ -44,11 +44,11 @@ getgenv()['cenv'].Test = function()
 end;
 --// Returns function list in console
 getgenv()['cenv'].GetFunctions = function()
-    printconsole('------ FUNCTIONS LIST ------',0,127,255);
+    print('------ FUNCTIONS LIST ------');
     table.foreach(Functions,function(i,v)
-        printconsole(("%s %s"):format(i,tostring(v)),255,182,193);
+        print(("%s %s"):format(i,tostring(v)));
     end);
-    printconsole('------ FUNCTIONS LIST END ------',0,127,255);
+    print('------ FUNCTIONS LIST END ------');
 end;
 --// Finds the needable function and returns it
 getgenv()['cenv'].Find = function(function_name)
@@ -62,5 +62,5 @@ end;
 --// Responsible for copying in SG.Generate
 getgenv()['cenv'].Copy = true;
 --// Notify about loading
-print(('Custom functions finished loading, took: %.8f'):format(tick() - Timer),0,127,255);
-print(('Compatibility test is %s'):format(cenv.Test() and 'succeed' or 'failed'),0,218,148);
+print(('Custom functions finished loading, took: %.8f'):format(tick() - Timer));
+print(('Compatibility test is %s'):format(cenv.Test() and 'succeed' or 'failed'));
